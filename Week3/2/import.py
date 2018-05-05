@@ -17,13 +17,13 @@ video = input("What show or movie are you looking for? ")
 
 csvpath = os.path.join(".","Netflix","netflix_ratings.csv")
 
-csvreader = csv.reader(csvpath,delimiter=',')
+#csvreader = csv.reader(csvpath,delimiter=',')
 
 print(csv)
 found = False
 
-with open(csvpath, newline='') as csvfile:
-    csvreader = csv.reader(csvfile,delimeter=',')
+with open(csvpath,newline="") as csvfile:
+    csvreader = csv.reader(csvfile, delimiter=',')
 
 for row in csvreader:
     print(row[0] + " is rated " + row[1])
