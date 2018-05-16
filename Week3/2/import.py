@@ -24,6 +24,7 @@ found = False
 
 with open(csvpath,newline="") as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
-
-for row in csvreader:
-    print(row[0] + " is rated " + row[1])
+    for row in csvreader:
+        print(row[0] + " is rated " + row[1])
+    if(found == False):
+        print("Not found")
