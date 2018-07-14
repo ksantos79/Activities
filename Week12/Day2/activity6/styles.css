@@ -1,0 +1,20 @@
+.purple{
+    color:purple;
+}
+.blue{
+    color:blue;
+}
+.red{
+    color:red;
+}
+.back-black{
+    background-color: black;
+}
+.small-font{
+    font-size: 15px;
+}
+#attention{
+    background-color: red;
+    text-align: center;
+    color: white;
+}

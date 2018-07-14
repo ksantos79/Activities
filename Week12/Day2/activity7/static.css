@@ -1,0 +1,29 @@
+.box-set{
+    position:relative;
+    height: 400px;
+    background: darkgray;
+}
+
+.box{
+    position: absolute;
+    width:150px;
+    height:150px;
+    background: green;
+    border:2px solid black;
+}
+.box-1{
+    top:6%;
+    left:2%;
+}
+.box-2{
+    top:0;
+    left:-40;
+}
+.box-3{
+    top:8%;
+    left:10%;
+}
+.box-4{
+    top:50%;
+    left:80%;
+}
