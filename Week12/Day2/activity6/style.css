@@ -1,0 +1,27 @@
+h1 {
+    color: blue;
+}
+
+.purple {
+    color: purple !important;
+}
+
+.back-black{
+    background-color:#000;
+}
+
+#red {
+    color: red;
+}
+
+#big-font {
+    font-size: 40px;
+}
+
+#bold-font{
+    font-weight: bold;
+}
+
+.small-font{
+    font-size: 10px;
+}
