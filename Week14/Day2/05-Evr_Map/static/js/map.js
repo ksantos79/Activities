@@ -2,7 +2,7 @@ var theStagesOfJS = ["confidence", "sadness", "confusion", "realization", "debug
 
 // Using the .map method
 var mapSimpleArray = theStagesOfJS.map(function(item) {
-  return item;
+  return item + "*";
 });
 
 console.log(mapSimpleArray);
