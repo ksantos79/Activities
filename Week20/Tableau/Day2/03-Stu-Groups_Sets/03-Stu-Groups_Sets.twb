@@ -1,0 +1,1706 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20182.18.0627.2230                               -->
+<workbook original-version='18.1' source-build='2018.2.0 (20182.18.0627.2230)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <SortTagCleanup />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='dog_intelligence+' inline='true' name='federated.1whv8b811jyl661ajzlcj0vs9lag' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='dog_intelligence' name='textscan.0ticgnn1rbcmyq19zzv5z0lbvf9b'>
+            <connection class='textscan' directory='C:/Users/KashS/Activities/Week20/Tableau/Day2/03-Stu-Groups_Sets/Resources' filename='dog_intelligence.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation join='inner' type='join'>
+          <clause type='join'>
+            <expression op='='>
+              <expression op='[dog_intelligence.csv].[breed]' />
+              <expression op='[akc_breed_info.csv].[breed]' />
+            </expression>
+          </clause>
+          <relation connection='textscan.0ticgnn1rbcmyq19zzv5z0lbvf9b' name='dog_intelligence.csv' table='[dog_intelligence#csv]' type='table'>
+            <columns character-set='windows-1252' header='yes' locale='en_US' separator=','>
+              <column datatype='string' name='breed' ordinal='0' />
+              <column datatype='real' name='obey' ordinal='1' />
+              <column datatype='integer' name='reps_lower' ordinal='2' />
+              <column datatype='integer' name='reps_upper' ordinal='3' />
+            </columns>
+          </relation>
+          <relation connection='textscan.0ticgnn1rbcmyq19zzv5z0lbvf9b' name='akc_breed_info.csv' table='[akc_breed_info#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='string' name='breed' ordinal='0' />
+              <column datatype='real' name='height_low_inches' ordinal='1' />
+              <column datatype='real' name='height_high_inches' ordinal='2' />
+              <column datatype='integer' name='weight_low_lbs' ordinal='3' />
+              <column datatype='integer' name='weight_high_lbs' ordinal='4' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[breed (akc_breed_info.csv)]' value='[akc_breed_info.csv].[breed]' />
+          <map key='[breed]' value='[dog_intelligence.csv].[breed]' />
+          <map key='[height_high_inches]' value='[akc_breed_info.csv].[height_high_inches]' />
+          <map key='[height_low_inches]' value='[akc_breed_info.csv].[height_low_inches]' />
+          <map key='[obey]' value='[dog_intelligence.csv].[obey]' />
+          <map key='[reps_lower]' value='[dog_intelligence.csv].[reps_lower]' />
+          <map key='[reps_upper]' value='[dog_intelligence.csv].[reps_upper]' />
+          <map key='[weight_high_lbs]' value='[akc_breed_info.csv].[weight_high_lbs]' />
+          <map key='[weight_low_lbs]' value='[akc_breed_info.csv].[weight_low_lbs]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[dog_intelligence.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;ibm-5348_P100-1997&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>breed</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[breed]</local-name>
+            <parent-name>[dog_intelligence.csv]</parent-name>
+            <remote-alias>breed</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>obey</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[obey]</local-name>
+            <parent-name>[dog_intelligence.csv]</parent-name>
+            <remote-alias>obey</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>reps_lower</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[reps_lower]</local-name>
+            <parent-name>[dog_intelligence.csv]</parent-name>
+            <remote-alias>reps_lower</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>reps_upper</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[reps_upper]</local-name>
+            <parent-name>[dog_intelligence.csv]</parent-name>
+            <remote-alias>reps_upper</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[akc_breed_info.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>breed</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[breed (akc_breed_info.csv)]</local-name>
+            <parent-name>[akc_breed_info.csv]</parent-name>
+            <remote-alias>breed</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>height_low_inches</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[height_low_inches]</local-name>
+            <parent-name>[akc_breed_info.csv]</parent-name>
+            <remote-alias>height_low_inches</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>height_high_inches</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[height_high_inches]</local-name>
+            <parent-name>[akc_breed_info.csv]</parent-name>
+            <remote-alias>height_high_inches</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>weight_low_lbs</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[weight_low_lbs]</local-name>
+            <parent-name>[akc_breed_info.csv]</parent-name>
+            <remote-alias>weight_low_lbs</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>weight_high_lbs</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[weight_high_lbs]</local-name>
+            <parent-name>[akc_breed_info.csv]</parent-name>
+            <remote-alias>weight_high_lbs</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Average Weight' datatype='real' name='[Calculation_1936547880601587714]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='([weight_high_lbs]+[weight_high_lbs])/2' />
+      </column>
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Average Weight (Group)' datatype='string' name='[Small]' role='dimension' type='ordinal'>
+        <calculation class='categorical-bin' column='[Calculation_1936547880601587714]' new-bin='true'>
+          <bin default-name='false' value='&quot;Large&quot;'>
+            <value>65.0</value>
+            <value>66.0</value>
+            <value>70.0</value>
+            <value>75.0</value>
+            <value>76.0</value>
+            <value>80.0</value>
+            <value>85.0</value>
+            <value>90.0</value>
+            <value>95.0</value>
+            <value>100.0</value>
+            <value>110.0</value>
+            <value>120.0</value>
+            <value>130.0</value>
+            <value>135.0</value>
+            <value>140.0</value>
+            <value>150.0</value>
+            <value>160.0</value>
+            <value>170.0</value>
+            <value>190.0</value>
+          </bin>
+          <bin default-name='false' value='&quot;Medium&quot;'>
+            <value>21.0</value>
+            <value>22.0</value>
+            <value>23.0</value>
+            <value>25.0</value>
+            <value>27.0</value>
+            <value>28.0</value>
+            <value>30.0</value>
+            <value>32.0</value>
+            <value>33.0</value>
+            <value>35.0</value>
+            <value>36.0</value>
+            <value>40.0</value>
+            <value>45.0</value>
+            <value>50.0</value>
+            <value>55.0</value>
+            <value>60.0</value>
+          </bin>
+          <bin default-name='false' value='&quot;Small&quot;'>
+            <value>5.0</value>
+            <value>6.0</value>
+            <value>7.0</value>
+            <value>8.0</value>
+            <value>10.0</value>
+            <value>11.0</value>
+            <value>12.0</value>
+            <value>14.0</value>
+            <value>15.0</value>
+            <value>16.0</value>
+            <value>17.0</value>
+            <value>18.0</value>
+            <value>20.0</value>
+          </bin>
+        </calculation>
+      </column>
+      <column caption='Breed (Akc Breed Info.Csv)' datatype='string' name='[breed (akc_breed_info.csv)]' role='dimension' type='nominal' />
+      <column caption='Breed' datatype='string' name='[breed]' role='dimension' type='nominal' />
+      <column caption='Height High Inches' datatype='real' name='[height_high_inches]' role='measure' type='quantitative' />
+      <column caption='Height Low Inches' datatype='real' name='[height_low_inches]' role='measure' type='quantitative' />
+      <column caption='Obey' datatype='real' name='[obey]' role='measure' type='quantitative' />
+      <column caption='Reps Lower' datatype='integer' name='[reps_lower]' role='measure' type='quantitative' />
+      <column caption='Reps Upper' datatype='integer' name='[reps_upper]' role='measure' type='quantitative' />
+      <column caption='Weight High Lbs' datatype='integer' name='[weight_high_lbs]' role='measure' type='quantitative' />
+      <column caption='Weight Low Lbs' datatype='integer' name='[weight_low_lbs]' role='measure' type='quantitative' />
+      <column-instance column='[Medium Breeds]' derivation='InOut' name='[io:Medium Breeds:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Small Breeds]' derivation='InOut' name='[io:Small Breeds:nk]' pivot='key' type='nominal' />
+      <column-instance column='[breed]' derivation='None' name='[none:breed:nk]' pivot='key' type='nominal' />
+      <group name='[Large Breeds]' name-style='unqualified' user:ui-builder='lasso-group'>
+        <groupfilter function='reorder-dimensionality'>
+          <groupfilter function='crossjoin'>
+            <groupfilter function='member' level='[io:Medium Breeds:nk]' member='false' />
+            <groupfilter function='crossjoin'>
+              <groupfilter function='member' level='[io:Small Breeds:nk]' member='false' />
+              <groupfilter function='union'>
+                <groupfilter function='member' level='[breed]' member='&quot;Akita&quot;' />
+                <groupfilter function='member' level='[breed]' member='&quot;American Foxhound&quot;' />
+                <groupfilter function='member' level='[breed]' member='&quot;Bernese Mountain Dog&quot;' />
+                <groupfilter function='member' level='[breed]' member='&quot;Bloodhound&quot;' />
+                <groupfilter function='member' level='[breed]' member='&quot;Borzoi&quot;' />
+                <groupfilter function='member' level='[breed]' member='&quot;Boxer&quot;' />
+                <groupfilter function='member' level='[breed]' member='&quot;Briard&quot;' />
+                <groupfilter function='member' level='[breed]' member='&quot;Bullmastiff&quot;' />
+                <groupfilter function='member' level='[breed]' member='&quot;Curly Coated Retriever&quot;' />
+                <groupfilter function='member' level='[breed]' member='&quot;English Foxhound&quot;' />
+                <groupfilter function='member' level='[breed]' member='&quot;Giant Schnauzer&quot;' />
+                <groupfilter function='member' level='[breed]' member='&quot;Great Dane&quot;' />
+                <groupfilter function='member' level='[breed]' member='&quot;Great Pyrenees&quot;' />
+                <groupfilter function='member' level='[breed]' member='&quot;Irish Wolfhound&quot;' />
+                <groupfilter function='member' level='[breed]' member='&quot;Kuvasz&quot;' />
+                <groupfilter function='member' level='[breed]' member='&quot;Mastiff&quot;' />
+                <groupfilter function='member' level='[breed]' member='&quot;Newfoundland&quot;' />
+                <groupfilter function='member' level='[breed]' member='&quot;Rhodesian Ridgeback&quot;' />
+                <groupfilter function='member' level='[breed]' member='&quot;Rottweiler&quot;' />
+                <groupfilter function='member' level='[breed]' member='&quot;Saint Bernard&quot;' />
+                <groupfilter function='member' level='[breed]' member='&quot;Scottish Deerhound&quot;' />
+                <groupfilter function='member' level='[breed]' member='&quot;Weimaraner&quot;' />
+              </groupfilter>
+            </groupfilter>
+          </groupfilter>
+          <order>
+            <hierarchy name='[breed]' />
+            <hierarchy name='[io:Medium Breeds:nk]' />
+            <hierarchy name='[io:Small Breeds:nk]' />
+          </order>
+        </groupfilter>
+      </group>
+      <group name='[Medium Breeds]' name-style='unqualified' user:ui-builder='lasso-group'>
+        <groupfilter function='reorder-dimensionality'>
+          <groupfilter function='crossjoin'>
+            <groupfilter function='member' level='[io:Small Breeds:nk]' member='false' />
+            <groupfilter function='union'>
+              <groupfilter function='member' level='[breed]' member='&quot;Afghan Hound&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;American Staffordshire Terrier&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;American Water Spaniel&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;Australian Cattle Dog&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;Australian Shepherd&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;Basset Hound&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;Bearded Collie&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;Belgian Malinois&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;Belgian Sheepdog&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;Border Collie&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;Brittany&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;Bull Terrier&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;Cardigan Welsh Corgi&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;Chesapeake Bay Retriever&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;Chinese Shar Pei&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;Chow Chow&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;Clumber Spaniel&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;Dalmatian&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;Doberman Pinscher&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;English Setter&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;English Springer Spaniel&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;Field Spaniel&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;Finnish Spitz&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;German Shorthaired Pointer&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;German Wirehaired Pointer&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;Golden Retriever&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;Gordon Setter&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;Greyhound&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;Ibizan Hound&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;Irish Setter&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;Irish Terrier&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;Irish Water Spaniel&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;Keeshond&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;Kerry Blue Terrier&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;Labrador Retriever&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;Norwegian Elkhound&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;Pharaoh Hound&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;Pointer&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;Portuguese Water Dog&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;Puli&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;Saluki&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;Samoyed&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;Siberian Husky&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;Skye Terrier&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;Staffordshire Bull Terrier&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;Standard Schnauzer&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;Vizsla&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;Welsh Springer Spaniel&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;Whippet&quot;' />
+              <groupfilter function='member' level='[breed]' member='&quot;Wirehaired Pointing Griffon&quot;' />
+            </groupfilter>
+          </groupfilter>
+          <order>
+            <hierarchy name='[breed]' />
+            <hierarchy name='[io:Small Breeds:nk]' />
+          </order>
+        </groupfilter>
+      </group>
+      <group name='[Small Breeds]' name-style='unqualified' user:ui-builder='lasso-group'>
+        <groupfilter function='union'>
+          <groupfilter function='member' level='[breed]' member='&quot;Affenpinscher&quot;' />
+          <groupfilter function='member' level='[breed]' member='&quot;Australian Terrier&quot;' />
+          <groupfilter function='member' level='[breed]' member='&quot;Basenji&quot;' />
+          <groupfilter function='member' level='[breed]' member='&quot;Beagle&quot;' />
+          <groupfilter function='member' level='[breed]' member='&quot;Bedlington Terrier&quot;' />
+          <groupfilter function='member' level='[breed]' member='&quot;Bichon Frise&quot;' />
+          <groupfilter function='member' level='[breed]' member='&quot;Border Terrier&quot;' />
+          <groupfilter function='member' level='[breed]' member='&quot;Boston Terrier&quot;' />
+          <groupfilter function='member' level='[breed]' member='&quot;Cairn Terrier&quot;' />
+          <groupfilter function='member' level='[breed]' member='&quot;Cavalier King Charles Spaniel&quot;' />
+          <groupfilter function='member' level='[breed]' member='&quot;Chihuahua&quot;' />
+          <groupfilter function='member' level='[breed]' member='&quot;Chinese Crested&quot;' />
+          <groupfilter function='member' level='[breed]' member='&quot;Dachshund&quot;' />
+          <groupfilter function='member' level='[breed]' member='&quot;Dandie Dinmont Terrier&quot;' />
+          <groupfilter function='member' level='[breed]' member='&quot;French Bulldog&quot;' />
+          <groupfilter function='member' level='[breed]' member='&quot;Italian Greyhound&quot;' />
+          <groupfilter function='member' level='[breed]' member='&quot;Japanese Chin&quot;' />
+          <groupfilter function='member' level='[breed]' member='&quot;Lakeland Terrier&quot;' />
+          <groupfilter function='member' level='[breed]' member='&quot;Maltese&quot;' />
+          <groupfilter function='member' level='[breed]' member='&quot;Papillon&quot;' />
+          <groupfilter function='member' level='[breed]' member='&quot;Pomeranian&quot;' />
+          <groupfilter function='member' level='[breed]' member='&quot;Pug&quot;' />
+          <groupfilter function='member' level='[breed]' member='&quot;Schipperke&quot;' />
+          <groupfilter function='member' level='[breed]' member='&quot;Scottish Terrier&quot;' />
+          <groupfilter function='member' level='[breed]' member='&quot;Sealyham Terrier&quot;' />
+          <groupfilter function='member' level='[breed]' member='&quot;Shiba Inu&quot;' />
+          <groupfilter function='member' level='[breed]' member='&quot;Shih Tzu&quot;' />
+          <groupfilter function='member' level='[breed]' member='&quot;Tibetan Spaniel&quot;' />
+          <groupfilter function='member' level='[breed]' member='&quot;Tibetan Terrier&quot;' />
+          <groupfilter function='member' level='[breed]' member='&quot;Welsh Terrier&quot;' />
+          <groupfilter function='member' level='[breed]' member='&quot;West Highland White Terrier&quot;' />
+          <groupfilter function='member' level='[breed]' member='&quot;Yorkshire Terrier&quot;' />
+        </groupfilter>
+      </group>
+      <layout dim-ordering='alphabetic' dim-percentage='0.315515' group-percentage='0.205997' measure-ordering='alphabetic' measure-percentage='0.478488' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[io:Small Breeds:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>true</bucket>
+            </map>
+            <map to='#a2a2a2'>
+              <bucket>false</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:breed:nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;Australian Terrier&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Cairn Terrier&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;German Shorthaired Pointer&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Maltese&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Shiba Inu&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Affenpinscher&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Border Terrier&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Dandie Dinmont Terrier&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Irish Wolfhound&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Rottweiler&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;West Highland White Terrier&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;American Staffordshire Terrier&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Briard&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;English Springer Spaniel&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Kerry Blue Terrier&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Schipperke&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Bearded Collie&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Chihuahua&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Gordon Setter&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Papillon&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Staffordshire Bull Terrier&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Basenji&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Cardigan Welsh Corgi&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;German Wirehaired Pointer&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Mastiff&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Shih Tzu&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;American Water Spaniel&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Brittany&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Field Spaniel&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Kuvasz&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Scottish Deerhound&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Bloodhound&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Dachshund&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Irish Terrier&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Puli&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Welsh Springer Spaniel&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Afghan Hound&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Borzoi&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Doberman Pinscher&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Italian Greyhound&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Saint Bernard&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Whippet&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Bernese Mountain Dog&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Clumber Spaniel&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Ibizan Hound&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Portuguese Water Dog&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Vizsla&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Australian Cattle Dog&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Bull Terrier&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Finnish Spitz&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Labrador Retriever&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Scottish Terrier&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Bedlington Terrier&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Chinese Crested&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Great Dane&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Pharaoh Hound&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Standard Schnauzer&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Belgian Malinois&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Chinese Shar Pei&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Great Pyrenees&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Pointer&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Tibetan Spaniel&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Bichon Frise&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Curly Coated Retriever&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Irish Setter&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Pug&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Weimaraner&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Border Collie&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Dalmatian&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Irish Water Spaniel&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Rhodesian Ridgeback&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Welsh Terrier&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Basset Hound&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Cavalier King Charles Spaniel&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Giant Schnauzer&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Newfoundland&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Siberian Husky&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Australian Shepherd&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Bullmastiff&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;French Bulldog&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Lakeland Terrier&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Sealyham Terrier&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Akita&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Boston Terrier&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;English Foxhound&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Japanese Chin&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Saluki&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Wirehaired Pointing Griffon&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Belgian Sheepdog&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Chow Chow&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Greyhound&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Pomeranian&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Tibetan Terrier&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Beagle&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Chesapeake Bay Retriever&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Golden Retriever&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Norwegian Elkhound&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Skye Terrier&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;American Foxhound&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Boxer&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;English Setter&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Keeshond&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Samoyed&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Yorkshire Terrier&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='dog_intelligence+' name='federated.1whv8b811jyl661ajzlcj0vs9lag' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1whv8b811jyl661ajzlcj0vs9lag'>
+            <column caption='Breed' datatype='string' name='[breed]' role='dimension' type='nominal' />
+            <column-instance column='[Large Breeds]' derivation='InOut' name='[io:Large Breeds:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Medium Breeds]' derivation='InOut' name='[io:Medium Breeds:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Small Breeds]' derivation='InOut' name='[io:Small Breeds:nk]' pivot='key' type='nominal' />
+            <column-instance column='[breed]' derivation='None' name='[none:breed:nk]' pivot='key' type='nominal' />
+            <column-instance column='[weight_low_lbs]' derivation='Sum' name='[sum:weight_low_lbs:qk]' pivot='key' type='quantitative' />
+            <column caption='Weight Low Lbs' datatype='integer' name='[weight_low_lbs]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <manual-sort column='[federated.1whv8b811jyl661ajzlcj0vs9lag].[none:breed:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;Mastiff&quot;</bucket>
+              <bucket>&quot;Great Dane&quot;</bucket>
+              <bucket>&quot;Saint Bernard&quot;</bucket>
+              <bucket>&quot;Newfoundland&quot;</bucket>
+              <bucket>&quot;Bullmastiff&quot;</bucket>
+              <bucket>&quot;Great Pyrenees&quot;</bucket>
+              <bucket>&quot;Rottweiler&quot;</bucket>
+              <bucket>&quot;Irish Wolfhound&quot;</bucket>
+              <bucket>&quot;Bernese Mountain Dog&quot;</bucket>
+              <bucket>&quot;Bloodhound&quot;</bucket>
+              <bucket>&quot;Akita&quot;</bucket>
+              <bucket>&quot;Scottish Deerhound&quot;</bucket>
+              <bucket>&quot;Briard&quot;</bucket>
+              <bucket>&quot;Weimaraner&quot;</bucket>
+              <bucket>&quot;Rhodesian Ridgeback&quot;</bucket>
+              <bucket>&quot;Kuvasz&quot;</bucket>
+              <bucket>&quot;Giant Schnauzer&quot;</bucket>
+              <bucket>&quot;Borzoi&quot;</bucket>
+              <bucket>&quot;English Foxhound&quot;</bucket>
+              <bucket>&quot;Curly Coated Retriever&quot;</bucket>
+              <bucket>&quot;Boxer&quot;</bucket>
+              <bucket>&quot;American Foxhound&quot;</bucket>
+              <bucket>&quot;Irish Setter&quot;</bucket>
+              <bucket>&quot;Greyhound&quot;</bucket>
+              <bucket>&quot;German Wirehaired Pointer&quot;</bucket>
+              <bucket>&quot;Doberman Pinscher&quot;</bucket>
+              <bucket>&quot;Belgian Sheepdog&quot;</bucket>
+              <bucket>&quot;Belgian Malinois&quot;</bucket>
+              <bucket>&quot;Labrador Retriever&quot;</bucket>
+              <bucket>&quot;Golden Retriever&quot;</bucket>
+              <bucket>&quot;Chesapeake Bay Retriever&quot;</bucket>
+              <bucket>&quot;Samoyed&quot;</bucket>
+              <bucket>&quot;German Shorthaired Pointer&quot;</bucket>
+              <bucket>&quot;Bull Terrier&quot;</bucket>
+              <bucket>&quot;Afghan Hound&quot;</bucket>
+              <bucket>&quot;Wirehaired Pointing Griffon&quot;</bucket>
+              <bucket>&quot;Pharaoh Hound&quot;</bucket>
+              <bucket>&quot;Irish Water Spaniel&quot;</bucket>
+              <bucket>&quot;Gordon Setter&quot;</bucket>
+              <bucket>&quot;English Springer Spaniel&quot;</bucket>
+              <bucket>&quot;English Setter&quot;</bucket>
+              <bucket>&quot;Dalmatian&quot;</bucket>
+              <bucket>&quot;Chow Chow&quot;</bucket>
+              <bucket>&quot;Chinese Shar Pei&quot;</bucket>
+              <bucket>&quot;Pointer&quot;</bucket>
+              <bucket>&quot;Portuguese Water Dog&quot;</bucket>
+              <bucket>&quot;Ibizan Hound&quot;</bucket>
+              <bucket>&quot;Siberian Husky&quot;</bucket>
+              <bucket>&quot;Norwegian Elkhound&quot;</bucket>
+              <bucket>&quot;Border Collie&quot;</bucket>
+              <bucket>&quot;Bearded Collie&quot;</bucket>
+              <bucket>&quot;Basset Hound&quot;</bucket>
+              <bucket>&quot;Australian Shepherd&quot;</bucket>
+              <bucket>&quot;American Staffordshire Terrier&quot;</bucket>
+              <bucket>&quot;Welsh Springer Spaniel&quot;</bucket>
+              <bucket>&quot;Saluki&quot;</bucket>
+              <bucket>&quot;Keeshond&quot;</bucket>
+              <bucket>&quot;Field Spaniel&quot;</bucket>
+              <bucket>&quot;Clumber Spaniel&quot;</bucket>
+              <bucket>&quot;Australian Cattle Dog&quot;</bucket>
+              <bucket>&quot;Standard Schnauzer&quot;</bucket>
+              <bucket>&quot;Finnish Spitz&quot;</bucket>
+              <bucket>&quot;Kerry Blue Terrier&quot;</bucket>
+              <bucket>&quot;Brittany&quot;</bucket>
+              <bucket>&quot;Puli&quot;</bucket>
+              <bucket>&quot;Whippet&quot;</bucket>
+              <bucket>&quot;Skye Terrier&quot;</bucket>
+              <bucket>&quot;Irish Terrier&quot;</bucket>
+              <bucket>&quot;Cardigan Welsh Corgi&quot;</bucket>
+              <bucket>&quot;American Water Spaniel&quot;</bucket>
+              <bucket>&quot;Staffordshire Bull Terrier&quot;</bucket>
+              <bucket>&quot;Vizsla&quot;</bucket>
+              <bucket>&quot;Welsh Terrier&quot;</bucket>
+              <bucket>&quot;Tibetan Terrier&quot;</bucket>
+              <bucket>&quot;Basenji&quot;</bucket>
+              <bucket>&quot;Sealyham Terrier&quot;</bucket>
+              <bucket>&quot;Scottish Terrier&quot;</bucket>
+              <bucket>&quot;Bedlington Terrier&quot;</bucket>
+              <bucket>&quot;Beagle&quot;</bucket>
+              <bucket>&quot;French Bulldog&quot;</bucket>
+              <bucket>&quot;Dachshund&quot;</bucket>
+              <bucket>&quot;Shiba Inu&quot;</bucket>
+              <bucket>&quot;Lakeland Terrier&quot;</bucket>
+              <bucket>&quot;Cavalier King Charles Spaniel&quot;</bucket>
+              <bucket>&quot;Boston Terrier&quot;</bucket>
+              <bucket>&quot;Pug&quot;</bucket>
+              <bucket>&quot;Cairn Terrier&quot;</bucket>
+              <bucket>&quot;West Highland White Terrier&quot;</bucket>
+              <bucket>&quot;Schipperke&quot;</bucket>
+              <bucket>&quot;Border Terrier&quot;</bucket>
+              <bucket>&quot;Bichon Frise&quot;</bucket>
+              <bucket>&quot;Australian Terrier&quot;</bucket>
+              <bucket>&quot;Tibetan Spaniel&quot;</bucket>
+              <bucket>&quot;Shih Tzu&quot;</bucket>
+              <bucket>&quot;Dandie Dinmont Terrier&quot;</bucket>
+              <bucket>&quot;Affenpinscher&quot;</bucket>
+              <bucket>&quot;Italian Greyhound&quot;</bucket>
+              <bucket>&quot;Papillon&quot;</bucket>
+              <bucket>&quot;Chinese Crested&quot;</bucket>
+              <bucket>&quot;Maltese&quot;</bucket>
+              <bucket>&quot;Japanese Chin&quot;</bucket>
+              <bucket>&quot;Yorkshire Terrier&quot;</bucket>
+              <bucket>&quot;Pomeranian&quot;</bucket>
+              <bucket>&quot;Chihuahua&quot;</bucket>
+              <bucket>&quot;Alaskan Malamute&quot;</bucket>
+              <bucket>%all%</bucket>
+            </dictionary>
+          </manual-sort>
+          <filter class='quantitative' column='[federated.1whv8b811jyl661ajzlcj0vs9lag].[sum:weight_low_lbs:qk]' included-values='non-null' />
+          <slices>
+            <column>[federated.1whv8b811jyl661ajzlcj0vs9lag].[sum:weight_low_lbs:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1whv8b811jyl661ajzlcj0vs9lag].[io:Medium Breeds:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1whv8b811jyl661ajzlcj0vs9lag].[sum:weight_low_lbs:qk]</rows>
+        <cols>([federated.1whv8b811jyl661ajzlcj0vs9lag].[io:Large Breeds:nk] / ([federated.1whv8b811jyl661ajzlcj0vs9lag].[io:Medium Breeds:nk] / ([federated.1whv8b811jyl661ajzlcj0vs9lag].[io:Small Breeds:nk] / [federated.1whv8b811jyl661ajzlcj0vs9lag].[none:breed:nk])))</cols>
+      </table>
+    </worksheet>
+    <worksheet name='Sheet 2'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='dog_intelligence+' name='federated.1whv8b811jyl661ajzlcj0vs9lag' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1whv8b811jyl661ajzlcj0vs9lag'>
+            <column caption='Average Weight' datatype='real' name='[Calculation_1936547880601587714]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='([weight_high_lbs]+[weight_high_lbs])/2' />
+            </column>
+            <column caption='Average Weight (Group)' datatype='string' name='[Small]' role='dimension' type='ordinal'>
+              <calculation class='categorical-bin' column='[Calculation_1936547880601587714]' new-bin='true'>
+                <bin default-name='false' value='&quot;Large&quot;'>
+                  <value>65.0</value>
+                  <value>66.0</value>
+                  <value>70.0</value>
+                  <value>75.0</value>
+                  <value>76.0</value>
+                  <value>80.0</value>
+                  <value>85.0</value>
+                  <value>90.0</value>
+                  <value>95.0</value>
+                  <value>100.0</value>
+                  <value>110.0</value>
+                  <value>120.0</value>
+                  <value>130.0</value>
+                  <value>135.0</value>
+                  <value>140.0</value>
+                  <value>150.0</value>
+                  <value>160.0</value>
+                  <value>170.0</value>
+                  <value>190.0</value>
+                </bin>
+                <bin default-name='false' value='&quot;Medium&quot;'>
+                  <value>21.0</value>
+                  <value>22.0</value>
+                  <value>23.0</value>
+                  <value>25.0</value>
+                  <value>27.0</value>
+                  <value>28.0</value>
+                  <value>30.0</value>
+                  <value>32.0</value>
+                  <value>33.0</value>
+                  <value>35.0</value>
+                  <value>36.0</value>
+                  <value>40.0</value>
+                  <value>45.0</value>
+                  <value>50.0</value>
+                  <value>55.0</value>
+                  <value>60.0</value>
+                </bin>
+                <bin default-name='false' value='&quot;Small&quot;'>
+                  <value>5.0</value>
+                  <value>6.0</value>
+                  <value>7.0</value>
+                  <value>8.0</value>
+                  <value>10.0</value>
+                  <value>11.0</value>
+                  <value>12.0</value>
+                  <value>14.0</value>
+                  <value>15.0</value>
+                  <value>16.0</value>
+                  <value>17.0</value>
+                  <value>18.0</value>
+                  <value>20.0</value>
+                </bin>
+              </calculation>
+            </column>
+            <column-instance column='[Calculation_1936547880601587714]' derivation='Avg' name='[avg:Calculation_1936547880601587714:qk]' pivot='key' type='quantitative' />
+            <column caption='Breed' datatype='string' name='[breed]' role='dimension' type='nominal' />
+            <column-instance column='[breed]' derivation='None' name='[none:breed:nk]' pivot='key' type='nominal' />
+            <column caption='Weight High Lbs' datatype='integer' name='[weight_high_lbs]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1whv8b811jyl661ajzlcj0vs9lag].[Small]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Small]' />
+              <groupfilter function='member' level='[Small]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <alphabetic-sort column='[federated.1whv8b811jyl661ajzlcj0vs9lag].[none:breed:nk]' direction='ASC' />
+          <slices>
+            <column>[federated.1whv8b811jyl661ajzlcj0vs9lag].[Small]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1whv8b811jyl661ajzlcj0vs9lag].[Small]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1whv8b811jyl661ajzlcj0vs9lag].[none:breed:nk]</rows>
+        <cols>[federated.1whv8b811jyl661ajzlcj0vs9lag].[avg:Calculation_1936547880601587714:qk]</cols>
+      </table>
+    </worksheet>
+    <worksheet name='Sheet 3'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='dog_intelligence+' name='federated.1whv8b811jyl661ajzlcj0vs9lag' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1whv8b811jyl661ajzlcj0vs9lag'>
+            <column caption='Average Weight' datatype='real' name='[Calculation_1936547880601587714]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='([weight_high_lbs]+[weight_high_lbs])/2' />
+            </column>
+            <column caption='Average Weight (Group)' datatype='string' name='[Small]' role='dimension' type='ordinal'>
+              <calculation class='categorical-bin' column='[Calculation_1936547880601587714]' new-bin='true'>
+                <bin default-name='false' value='&quot;Large&quot;'>
+                  <value>65.0</value>
+                  <value>66.0</value>
+                  <value>70.0</value>
+                  <value>75.0</value>
+                  <value>76.0</value>
+                  <value>80.0</value>
+                  <value>85.0</value>
+                  <value>90.0</value>
+                  <value>95.0</value>
+                  <value>100.0</value>
+                  <value>110.0</value>
+                  <value>120.0</value>
+                  <value>130.0</value>
+                  <value>135.0</value>
+                  <value>140.0</value>
+                  <value>150.0</value>
+                  <value>160.0</value>
+                  <value>170.0</value>
+                  <value>190.0</value>
+                </bin>
+                <bin default-name='false' value='&quot;Medium&quot;'>
+                  <value>21.0</value>
+                  <value>22.0</value>
+                  <value>23.0</value>
+                  <value>25.0</value>
+                  <value>27.0</value>
+                  <value>28.0</value>
+                  <value>30.0</value>
+                  <value>32.0</value>
+                  <value>33.0</value>
+                  <value>35.0</value>
+                  <value>36.0</value>
+                  <value>40.0</value>
+                  <value>45.0</value>
+                  <value>50.0</value>
+                  <value>55.0</value>
+                  <value>60.0</value>
+                </bin>
+                <bin default-name='false' value='&quot;Small&quot;'>
+                  <value>5.0</value>
+                  <value>6.0</value>
+                  <value>7.0</value>
+                  <value>8.0</value>
+                  <value>10.0</value>
+                  <value>11.0</value>
+                  <value>12.0</value>
+                  <value>14.0</value>
+                  <value>15.0</value>
+                  <value>16.0</value>
+                  <value>17.0</value>
+                  <value>18.0</value>
+                  <value>20.0</value>
+                </bin>
+              </calculation>
+            </column>
+            <column-instance column='[obey]' derivation='Avg' name='[avg:obey:qk]' pivot='key' type='quantitative' />
+            <column caption='Obey' datatype='real' name='[obey]' role='measure' type='quantitative' />
+            <column caption='Weight High Lbs' datatype='integer' name='[weight_high_lbs]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1whv8b811jyl661ajzlcj0vs9lag].[Small]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Small]' />
+              <groupfilter function='member' level='[Small]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.1whv8b811jyl661ajzlcj0vs9lag].[Small]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.1whv8b811jyl661ajzlcj0vs9lag].[Small]</rows>
+        <cols>[federated.1whv8b811jyl661ajzlcj0vs9lag].[avg:obey:qk]</cols>
+      </table>
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1whv8b811jyl661ajzlcj0vs9lag].[io:Medium Breeds:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1whv8b811jyl661ajzlcj0vs9lag].[Breed (group)]</field>
+            <field>[federated.1whv8b811jyl661ajzlcj0vs9lag].[Set 1]</field>
+            <field>[federated.1whv8b811jyl661ajzlcj0vs9lag].[Small Breed w]</field>
+            <field>[federated.1whv8b811jyl661ajzlcj0vs9lag].[Small Breed]</field>
+            <field>[federated.1whv8b811jyl661ajzlcj0vs9lag].[Small]</field>
+            <field>[federated.1whv8b811jyl661ajzlcj0vs9lag].[io:Large:nk]</field>
+            <field>[federated.1whv8b811jyl661ajzlcj0vs9lag].[io:Medium Breeds:nk]</field>
+            <field>[federated.1whv8b811jyl661ajzlcj0vs9lag].[io:Set 1:nk]</field>
+            <field>[federated.1whv8b811jyl661ajzlcj0vs9lag].[io:Small Breed:nk]</field>
+            <field>[federated.1whv8b811jyl661ajzlcj0vs9lag].[none:breed:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+    </window>
+    <window class='worksheet' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='1' param='[federated.1whv8b811jyl661ajzlcj0vs9lag].[Small]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <selection-collection>
+          <node-selection select-tuples='false'>
+            <oriented-node-reference orientation='horizontal'>
+              <node-reference>
+                <fields>
+                  <field>[federated.1whv8b811jyl661ajzlcj0vs9lag].[Small]</field>
+                </fields>
+                <multibucket>
+                  <bucket>%null%</bucket>
+                </multibucket>
+              </node-reference>
+              <page-reference />
+            </oriented-node-reference>
+          </node-selection>
+        </selection-collection>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1whv8b811jyl661ajzlcj0vs9lag].[Small]</field>
+            <field>[federated.1whv8b811jyl661ajzlcj0vs9lag].[none:breed:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+    </window>
+    <window class='worksheet' maximized='true' name='Sheet 3'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1whv8b811jyl661ajzlcj0vs9lag].[Small]</field>
+            <field>[federated.1whv8b811jyl661ajzlcj0vs9lag].[none:breed:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 2' width='192'>
+      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
+      /w8p6uVLXelCFgAAAABJRU5ErkJggg==
+    </thumbnail>
+    <thumbnail height='139' name='Sheet 3' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAACLCAYAAAA3Q5aoAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAAK+UlEQVR4nO3de1BU5xnH8W88oosGL0AEvNSCoIJjhNrI0NBoJqkOuVRjLkYaGmIdV00z
+      jm0yTY1iZcw4k7TBMZoEk6y2NmrSYCQ2oDRtMRIvJCpqvaBE8ZK4KCKRwq67nJz+AZRVEV2z
+      yy77Pp8Z/3D38J7nLPvb9z0v+55zm2EYBkIoqouvCxDClyQAQmkSAKE0CYBQmgRAKE0CIJQm
+      ARBKkwAIpUkAhNIkAEJpEgChNAmAUJoEQChNAiCUJgEQSpMACKVJAITSJABCaRIAoTQJgFCa
+      BEAoTQIglCYBEEqTAAilSQCE0iQAQmkSAKE0CYCXNTQ0+LqEm1ZXV+frEm6ap2qVAAilSQCE
+      0rr6ugAVTJy33tcliOuQHkAoTQIglBZwAbAWWii0+roK0VkEXACEcIcEQChNmVmgU5++xjt/
+      r6DKpqMFD2LsjLlMSegJWCm07CVpymC25qxk63cTyMpKI7K+gsLVqyjYX41DC2ZQ/3jGTDcz
+      PhJweU4PjmD0lDlkpoSh+foghduUCcDtwyYxJ3UwYSYN3X6YDy2fcz5hPHcANJ6m4N1jRD2R
+      zetDe6FhZ9ef3+HEqDm8OjMKE3Z2vv0KFwHQObT5M3pOXsDSZ01ozovsXLWObQmzGdfbp4co
+      boEyAehet5/ct5dRUWVDByCZYdAUgDoHQzOfJTWs5TP8CAe7Po45Nar5U92EqVtLS8fYV7KL
+      4qJdvOfSfvIYGJfYIYciPEiRABzgbx85SJv7KvF9gwArhdkFrU/3HUJsmMsARtdp7KpdZ0jj
+      5HLfh1mY8xD9vVu06ABqnATrDhy3hxN5exA46zmzbzuHLrazvRbNkIufsOHoJXTAefE4p6pb
+      nowjPryYdUWV2HUAJ/VnSik75e2DEN4QgD3AGTYuNLOx5b8DJrEoazwPxeewaM772LRw7nxg
+      AgN717bTRijjpt7NWyteYna1TvCgFO7sBlEAmEh+ehqVy5bzQl4dDi2YiNgUJmeO8faBCS+4
+      zTAMw9dF+B8735ysJiQiihCThm6v5JM/FRDx29kkm9xrqaGhgamLP/ZOmeJ7C8AewBMuU12y
+      htd2VlLnAC14ECkZs3jQzTe/8H/SA3iZ9AD+TQLgZQ0NDfTo0cPXZdyUuro6QkJCfF3GTfFU
+      rWrMAglxHRIAoTQJgFCaBEAoTaZBO4CsCfZf0gMIpUkAhNL8NgBlFjPmuX/lkH7VE/ZdvDHb
+      jNlSdiutYrmlnxOBym8DAMlMGl/FnvIrE2DftxvHT8cx4Hu3b6UwO1sW0CvOjwMAUUkJVO0p
+      pzUCdvbtdpCY1McDrUeSlpVFWqQHmhKdln/PAkUmkVD1KeV6AgkaYN/Hbkciv+hj4zOXzeor
+      Clm9qoD91TrBEaOZMieTlDAN0Lmwey1vrtnBaZtOt5AQSHiq+aeaFsVEZU0jESizZHP2gdZA
+      WAuzKYjKYloiWAuX82Gtidpdezht0wgfm87UiINs3LSH045uxE1+kefvlyR1Rv4dACJJeyaK
+      ZesOMeypYRxYu5ukmbPpXVvYusmRdczPKablGsy2qlJWz7uN4NxpRBa+y5ejZjB/aUbzs2VY
+      LLdSRw+G3DuNtKnNrVgsNN43nfn3QcuieitpSAQ6Hz8PABCaxIiaAsqdDvbYk0i/+ivJzsv0
+      fXghOQ9du0DxGx00vx7kCV/rBG+PUJJG1PDF+6XYk5K45iv5cfGEF6+jqNLedK7grOdMaRmn
+      gIiBXdm6oYQqJ6DbuXD4KGeusxeti4NLl5y0LHHcvEPOjlXg/z0AEJo0AmteOeMea2NFiimZ
+      p6dVsmz5C+TVOdCCI4hNmUzmGNASp/DL8hyWzFmDTQtnWOqQawPULGH8PWx5ZQ5mm0b4sFRS
+      hvTjnFePSvgDWQ/gZbIgxr91giGQEN4jARBKkyGQl8mSSO+QJZFCeIAEQChNAiCUJgEQSusU
+      fwjr7GRJpP+SHkAoTQIglBZ4AdAvceD9JTz/nBmz+TmeX/IO/6yo9+guyiwuK8mshWTLMstO
+      K+DOAWqK3+bjoEfJWjqUXpqTi8d3kf+f4xA70telCT8UcAH4+nQ9o8YPpZcGEETfmFQyY3xd
+      lfBXAReAuNE/4L23ctEefZB7EgbSM8jlyTILr+zpSdevSiiv1gmOm8T0ey9StKGE8moIHzuD
+      BekjMdHebVVFIAm4AJhGZjCv1w7y1y7lxdxGIlIymJU+mpZ74F0impnzJjOwp4PdK5ew5eTj
+      pC94jKigGor+uIkjjCSRG9xWVQSMgAsAaPQanErG71NJt1/g6L/XsPyDnsyfOhwNiPnRGAb2
+      BAhiwKAYEpJGEWUCuIN+Lu/udm+rKgJGAAaglWYKIz7tCUav3Md5hruxaP0Gt1UVASPgpkEP
+      frKG0jN1Tbcw1e1cKN1MSWMobl1JyN3bqopOK+B6gKjocDasWcSayuZbmI6YwPTM5OuuBW6T
+      lujmbVVFZyULYrxM1gT7t4AbAgnhDgmAUJoMgbxM1gR7h6wJFsIDpAfwsoaGhhtvJHwm4KZB
+      /VFnGQJ1puGap2qVIZBQmgRAKE0CIJQmARBKk1kgoTTpAYTSJABCaRIAoTQJgFCaBEAoTb4K
+      0WHqqch/k+VbjjWtMnv0WWaO64/W1qb6BXasfo21pdXo11ySxY12PLVPZxWl6y18UFpJnaMb
+      IcPvZ+aMicR69Coxnnp9WlgpejmbPP1hFmW1cxNzQ3QI2953jQUrthlWh2E0fltu5C1eaGw8
+      2fa2ZwsWG4vzyo1vGw3DYd1mrPjdCmOnzf12PLXP/X/5g7Fq21dGjcMwjEab8c3W142X1h7+
+      Xq+Ht2pt8d/trxuLN20ychcVGGfb2a8MgTqEnb0l5xn7ZCoRQaD1GsrER2LZ9+WJNrY9wfYv
+      BvPIxKar2wVFpPLkz+r4Yq/dzXY8tU9ISJ9PZmoMfYMAzUTU3Sn8wGb33MvjwVoBqN/Ne9t/
+      yDNpA284xJEAdIhaaokjJrT1EW1YPJHVNc3XHHL1LbWhQ4hx6ftD40fQ9UKNm+14ap+gaa4D
+      kXoq8j8n+K7hNzpoN3iuVtA58vGnhE9Oo3/b48IrSAA6hIPLXYIJdn1I0+hqPcf5qze9fBl7
+      j+Arr2LRRePcuXPuteOxfbbSLx0lP2clB+/8FRkj3brOxg14rlb9RD5buj/BxOibePcjJ8Ed
+      pBvdv7Nhc31I12mM7Hftlea6d8fUYMMOrb/k73T69esHdLn5djy2zybOU4Ws3AQTZsz18Mmv
+      J2u1UpR/mQnPRV9nUuBa0gN0iD704RjHa1of0csPYw0PbeMX1Zs+NV9x3KXvrzl8kMawUDfb
+      8dQ+gZpiLP/qR8bMNC+8+T1Y64HNbDpcTM5sM2azGbP5TXZ9vZGFZpf7OVxFAtAhTCSl3sHW
+      9SVUOZuHEh9VMOrH0W1sG81P7jrJR/lHuaSDs6qE9f8I4a4kk5vteGqfcGTLfmJ/Prr5kvPe
+      4KFaR2byRm4uuf//N4vkAZNYlJtF2nXmQeXboB3mynnuMem/ITMlrOkTzlpI9kqY0TJffcU8
+      dxwTfj2LibFt/x3gina8ss/zFL08n7xTVzU9YFL78+s+e31clWHJPssD7dQpARBKkyGQUJoE
+      QChNAiCUJgEQSpMACKVJAITSJABCaRIAoTQJgFCaBEAoTQIglCYBEEqTAAilSQCE0iQAQmkS
+      AKE0CYBQmgRAKE0CIJQmARBKkwAIpUkAhNIkAEJpEgChNAmAUJoEQChNAiCUJgEQSpMACKVJ
+      AITS/gebZ2AC0NuOdgAAAABJRU5ErkJggg==
+    </thumbnail>
+  </thumbnails>
+</workbook>

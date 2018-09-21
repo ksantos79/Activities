@@ -15,11 +15,11 @@ if(x < y){
 }
 // Checks if one value is greater than another
 if(y > x){
-  console.log("y is greater than y");
+  console.log("y is greater than x");
 }
 // Checks if a value is less than or equal to another
 if (x <= y){
-  console.log("x is less than equal to y")
+  console.log("x is less than or equal to y")
 }
 // Checks for two conditions to be met using &&
 if(x === 1 && y === 10){
